@@ -1,0 +1,2 @@
+alias composer=/usr/local/bin/external/composer.phar
+alias phpunit=/usr/local/bin/external/phpunit-7.0.2.phar
