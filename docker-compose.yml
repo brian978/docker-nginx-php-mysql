@@ -1,9 +1,9 @@
 version: "3"
 services:
   nginx:
-    image: nginx:latest
+    image: nginx:1.15
     ports:
-      - "8080:80"
+      - "80:80"
     links:
       - php
     volumes:
@@ -12,9 +12,10 @@ services:
       - ./logs/nginx:/var/log/nginx
   
   php:
-    image: nanoninja/php-fpm:latest
+    image: nanoninja/php-fpm:7.2
     links:
       - db
+      - memcache
     volumes:
       - ./app:/var/www/app
       - ./container-config/fpm/www.conf:/usr/local/etc/php-fpm.d/www.conf
@@ -23,10 +24,13 @@ services:
       - ./bin/php/:/usr/local/bin/external
 
   db:
-    image: mysql:latest
+    image: mysql:5.7
     ports:
       - "33061:3306"
     volumes:
       - ./persistent/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 12345
+      
+  memcache:
+    image: memcached:1.5
