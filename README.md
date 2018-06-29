@@ -1,8 +1,8 @@
 # Stack configuration
-Nginx: 1.15
-PHP-FPM: 7.2 (maintained by nanoninja)
-MySql: 5.7
-memcached: 1.5
+* Nginx: 1.15
+* PHP-FPM: 7.2 (maintained by nanoninja)
+* MySql: 5.7
+* memcached: 1.5
 
 # To connect to a docker container you just need to run
 docker exec -it {{ container_name }} /bin/bash
