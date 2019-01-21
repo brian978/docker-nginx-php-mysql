@@ -7,7 +7,7 @@ services:
     links:
       - php
     volumes:
-      - ./app:/var/www/app
+      - ./app/public:/var/www/app/public
       - ./container-config/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
       - ./logs/nginx:/var/log/nginx
   
@@ -22,6 +22,7 @@ services:
       - ./logs/php:/var/log/php
       - ./profile/php/bash_profile:/root/.bash_profile
       - ./bin/php/:/usr/local/bin/external
+      - ./scripts/container:/usr/local/scripts
 
   db:
     image: mysql:5.7
