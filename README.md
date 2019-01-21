@@ -1,11 +1,11 @@
 # To connect to a docker container you just need to run
 docker exec -it {{ container_name }} /bin/bash
 
-For example for the default instalation of the environment, the {{ container_name }} will be _nginxphpmysql_php_1_
+For example for the default installation of the environment, the {{ container_name }} will be _nginxphpmysql_php_1_
 
 ## Connecting the PHP container with a provisioned bash
 All you need to do is run the tty_php.sh bash script with the {{ conainer_name }} like so (just remember to use to proper name):
-`scripts/tty_php.sh nginxphpmysql_php_1`
+`scripts/tty_php.py`
 
 
 # Connecting from a container to another container

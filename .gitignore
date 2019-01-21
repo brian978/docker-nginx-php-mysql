@@ -1,3 +1,4 @@
 .DS_Store
 persistent/
 logs/
+.idea
