@@ -28,9 +28,13 @@ services:
     ports:
       - "33061:3306"
     volumes:
-      - ./persistent/mysql:/var/lib/mysql
+      - mysql-volume:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 12345
       
   memcache:
     image: memcached:1.5
+
+
+volumes:
+  mysql-volume:
