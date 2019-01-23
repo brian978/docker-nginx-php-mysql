@@ -14,7 +14,8 @@ services:
   php:
     image: brian978/php-fpm:7.2
     links:
-      - db
+      - mysql
+      - mssql
       - memcache
     volumes:
       - ./app:/var/www/app
@@ -23,7 +24,7 @@ services:
       - ./profile/php/bash_profile:/root/.bash_profile
       - ./bin/php/:/usr/local/bin/external
 
-  db:
+  mysql:
     image: mysql:5.7
     ports:
       - "33061:3306"
@@ -31,10 +32,20 @@ services:
       - mysql-volume:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 12345
-      
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql-volume:/var/opt/mssql
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: 12345
+
   memcache:
     image: memcached:1.5
 
-
 volumes:
   mysql-volume:
+  mssql-volume:
