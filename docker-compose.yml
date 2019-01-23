@@ -12,7 +12,7 @@ services:
       - ./logs/nginx:/var/log/nginx
   
   php:
-    image: nanoninja/php-fpm:7.2
+    image: brian978/php-fpm:7.2
     links:
       - db
       - memcache
