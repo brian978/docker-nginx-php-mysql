@@ -19,6 +19,7 @@ services:
       - mysql
       - mssql
       - memcache
+      - rabbitmq
     volumes:
       - ./app:/var/www/app
       - ./container-config/fpm/www.conf:/usr/local/etc/php-fpm.d/www.conf
