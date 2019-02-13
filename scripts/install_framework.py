@@ -4,7 +4,7 @@ import subprocess
 app_root_path = os.path.abspath(os.path.dirname(os.path.realpath(__file__)) + "/../").split("/")[-1]
 app_dir_name = app_root_path.split(b"/")[-1]
 
-install_cmd = "create-project --prefer-dist laravel/laravel /var/www/app/framework"
+install_cmd = "create-project symfony/website-skeleton /var/www/app/framework"
 cleanup_script = "/usr/local/scripts/install_cleanup.sh"
 
 # Install laravel in temporary folder
