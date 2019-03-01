@@ -23,4 +23,3 @@ for line in fileinput.input(parent_dir + "/docker-compose.yml", inplace=True):
         print("      ADV_HOST: " + ip)
     else:
         sys.stdout.write(line)
-
