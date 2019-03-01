@@ -13,10 +13,6 @@ services:
   
   php:
     image: brian978/php-fpm:7.2
-    links:
-      - mysql
-      - mssql
-      - memcache
     volumes:
       - ./app:/var/www/app
       - ./container-config/fpm/www.conf:/usr/local/etc/php-fpm.d/www.conf
