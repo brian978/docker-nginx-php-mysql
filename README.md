@@ -8,11 +8,7 @@
 * Microsoft SQL Server: 2017 (latest)
 * RabbitMq: 3.7
 
-# Before starting
-Before you start using this setup you need to make a copy for *`www.conf.dist`* (in  container-config/fpm) and create a file
-called *`www.conf`* (which is excluded from the repo)
-
-# To connect to a docker container you just need to run
+# To start up the stack you need to run
 `python scripts/run_stack.py`
 
 ## Connecting the PHP container with a provisioned bash
