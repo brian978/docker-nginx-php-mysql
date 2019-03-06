@@ -7,7 +7,7 @@ app_dir_name = app_root_path.split(b"/")[-1]
 install_cmd = "create-project symfony/website-skeleton /var/www/app/framework"
 cleanup_script = "/usr/local/scripts/install_cleanup.sh"
 
-# Install laravel in temporary folder
+# Install framework in temporary folder
 command = "docker exec -it {app_name}_php_1 php /usr/local/bin/external/composer.phar {composer_cmd}"
 command = command.format(app_name=app_dir_name, composer_cmd=install_cmd)
 
