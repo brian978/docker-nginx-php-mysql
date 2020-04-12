@@ -108,6 +108,7 @@ venv.bak/
 
 # Docker stuff
 container-config/fpm/www.conf
+container-config/nginx/conf.d/default.conf
 persistent/
 logs/
 scratches/
