@@ -1,7 +1,7 @@
 version: "3"
 services:
   nginx:
-    image: nginx:1.16
+    image: nginx:1.17
     ports:
       - "80:80"
     links:
@@ -12,7 +12,7 @@ services:
       - ./logs/nginx:/var/log/nginx
   
   php:
-    image: brian978/php-fpm:7.3
+    image: brian978/php-fpm:7.4
     volumes:
       - ./app:/var/www/app
       - ./container-config/fpm/www.conf:/usr/local/etc/php-fpm.d/www.conf
