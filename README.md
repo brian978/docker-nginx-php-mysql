@@ -1,8 +1,8 @@
 # Basic services
-* Nginx: 1.15
-* PHP-FPM: 7.2
+* Nginx: 1.17
+* PHP-FPM: 7.4
 * MySQL: 5.7
-* memcached: 1.5
+* memcached: 1.6
 
 # Extra services
 * Microsoft SQL Server: 2017 (latest)
