@@ -1,7 +1,7 @@
 version: "3"
 services:
   nginx:
-    image: nginx:1.15
+    image: nginx:1.16
     ports:
       - "80:80"
     links:
@@ -12,7 +12,7 @@ services:
       - ./logs/nginx:/var/log/nginx
   
   php:
-    image: brian978/php-fpm:7.2
+    image: brian978/php-fpm:7.3
     volumes:
       - ./app:/var/www/app
       - ./container-config/fpm/www.conf:/usr/local/etc/php-fpm.d/www.conf
@@ -30,7 +30,7 @@ services:
       MYSQL_ROOT_PASSWORD: 12345
 
   memcache:
-    image: memcached:1.5
+    image: memcached:1.6
 
 volumes:
   mysql-volume:
