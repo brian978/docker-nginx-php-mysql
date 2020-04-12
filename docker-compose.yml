@@ -15,7 +15,7 @@ services:
     image: brian978/php-fpm:7.3
     volumes:
       - ./app:/var/www/app
-      - ./container-config/fpm/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./container-config/fpm/www.conf.dist:/usr/local/etc/php-fpm.d/www.conf
       - ./logs/php:/var/log/php
       - ./profile/php/bash_profile:/root/.bash_profile
       - ./bin/php/:/usr/local/bin/external
