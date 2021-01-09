@@ -1,6 +1,0 @@
-alias composer=/usr/local/bin/external/composer.phar
-alias phpunit=/usr/local/bin/external/phpunit.phar
-
-# Updating the PATH
-PATH="/usr/local/bin/external/:${PATH}"
-export PATH
