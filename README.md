@@ -11,14 +11,14 @@
 # To start up the stack you need to run
 `python3 scripts/run.py`
 
-Note: This command will also install Symfony if the "vendor" folder is missing from the "app" directory
+*Note: Note: This command will also install Symfony if the "vendor" folder is missing from the "app" directory*
 
 ## Connecting the PHP container with a provisioned bash
 `python3 scripts/cli.py`
 
 # Flexible setup
-The base configuration only includes Nginx, PHP, MySQL and Memcached. If you want the other services you must pass one of
-the following parameters as follows:
+The base configuration only includes Nginx, PHP, MySQL and Memcached. If you want the other services you must pass one
+of the following parameters as follows:
 * rabbit - if you want RabbitMq
 * msql - if you want MySQL server
 
