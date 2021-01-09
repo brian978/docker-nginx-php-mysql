@@ -11,6 +11,8 @@
 # To start up the stack you need to run
 `python3 scripts/run.py`
 
+Note: This command will also install Symfony if the "vendor" folder is missing from the "app" directory
+
 ## Connecting the PHP container with a provisioned bash
 `python3 scripts/cli.py`
 
