@@ -36,3 +36,8 @@ command = "python {ip_update_script} && docker-compose {compose_config} up -d".f
 )
 
 subprocess.call(command, shell=True)
+
+# Check if framework is installed
+vendor_dir = os.path.join(parent_dir, "app", "vendor")
+if not os.path.isdir(vendor_dir):
+    import install
