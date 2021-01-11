@@ -1,5 +1,5 @@
 default:
-	echo "Please select an action from: run or cli"
+	echo "Please select an action from: run, stop or cli"
 
 run:
 	python3 scripts/run.py
