@@ -9,3 +9,6 @@ stop:
 
 cli:
 	python3 scripts/cli.py
+
+cleanup:
+	docker-compose down
