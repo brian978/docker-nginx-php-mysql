@@ -11,6 +11,11 @@ fpm_file = os.path.join(parent_dir, "services", "fpm", "www.conf")
 if not os.path.isfile(fpm_file):
     shutil.copyfile(fpm_file + ".dist", fpm_file)
 
+# Xdebug
+xdebug_file = os.path.join(parent_dir, "services", "php", "conf.d", "xdebug.ini")
+if not os.path.isfile(xdebug_file):
+    shutil.copyfile(xdebug_file + ".dist", xdebug_file)
+
 # Nginx
 nginx_file = os.path.join(parent_dir, "services", "nginx", "conf.d", "default.conf")
 if not os.path.isfile(nginx_file):

@@ -7,6 +7,10 @@ run:
 stop:
 	docker-compose stop
 
+restart:
+	docker-compose stop
+	python3 scripts/run.py
+
 cli:
 	python3 scripts/cli.py
 
