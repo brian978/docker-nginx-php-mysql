@@ -1,5 +1,5 @@
 fpm/www.conf
-php/xdebug.ini
+php/conf.d/xdebug.ini
 nginx/conf.d/default.conf
 
 
