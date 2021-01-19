@@ -411,7 +411,3 @@ php_flag[display_errors] = on
 php_admin_value[error_log] = /var/logs/php/fpm-php.www.log
 php_admin_flag[log_errors] = on
 php_admin_value[memory_limit] = 32M
-
-php_admin_value[xdebug.remote_enable] = On
-php_admin_value[xdebug.remote_autostart] = On
-php_admin_value[xdebug.remote_host] = 127.0.0.1
