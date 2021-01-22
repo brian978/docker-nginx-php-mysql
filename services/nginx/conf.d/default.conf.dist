@@ -2,6 +2,7 @@ server {
     listen       80;
     server_name  localhost;
     root         /var/www/app;
+    index        index.php;
 
     #charset koi8-r;
     access_log  /var/log/nginx/localhost.access.log  main;
@@ -24,8 +25,6 @@ server {
         try_files $uri $uri/ /index.php?$args;
     }
 
-    #error_page  404              /404.html;
-
     # redirect server error pages to the static page /50x.html
     #
     error_page 500 502 503 504  /50x.html;
@@ -36,13 +35,12 @@ server {
     # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
     #
     location ~ \.php$ {
-        try_files $uri =404;
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_pass php:9000;
-        fastcgi_index index.php;
+        # NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
         include fastcgi_params;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_param PATH_INFO $fastcgi_path_info;
+        fastcgi_intercept_errors on;
+        fastcgi_pass php:9000;
+        # The following parameter can be also included in fastcgi_params file
+        fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
     }
 
     location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
@@ -57,4 +55,3 @@ server {
         deny  all;
     }
 }
-
