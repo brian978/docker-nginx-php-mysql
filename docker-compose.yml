@@ -23,7 +23,7 @@ services:
       - ./services/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
       - ./logs/php:/var/log/php
     environment:
-      - PHP_IDE_CONFIG=serverName=docker
+      PHP_IDE_CONFIG: serverName=docker
 
   db:
     image: mariadb:latest
