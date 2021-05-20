@@ -35,7 +35,7 @@ for fileKey in sys.argv[1:]:
         compose_config += " -f {extra_compose_file}".format(extra_compose_file=files.get(fileKey))
 
 # Run the UP command
-command = "python {ip_update_script} && docker-compose {compose_config} up -d".format(
+command = "python3 {ip_update_script} && docker-compose {compose_config} up -d".format(
     ip_update_script=os.path.join(parent_dir, "scripts", "update_www_conf.py"),
     compose_config=compose_config
 )
