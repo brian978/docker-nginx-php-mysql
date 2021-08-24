@@ -5,7 +5,7 @@ import shutil
 
 parent_dir = os.path.abspath(os.path.dirname(os.path.realpath(__file__)) + "/../")
 
-# Ensure we have the required configration files for the docker services
+# Ensure we have the required configuration files for the docker services
 # FPM
 fpm_file = os.path.join(parent_dir, "services", "fpm", "www.conf")
 if not os.path.isfile(fpm_file):
@@ -39,6 +39,8 @@ command = "python3 {ip_update_script} && docker-compose {compose_config} up -d".
     ip_update_script=os.path.join(parent_dir, "scripts", "update_www_conf.py"),
     compose_config=compose_config
 )
+
+print(command)
 
 subprocess.call(command, shell=True)
 

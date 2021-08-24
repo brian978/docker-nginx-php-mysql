@@ -2,7 +2,6 @@ import sys
 import os
 import socket
 import fileinput
-from shutil import copyfile
 
 parent_dir = os.path.abspath(os.path.dirname(os.path.realpath(__file__)) + "/../")
 
