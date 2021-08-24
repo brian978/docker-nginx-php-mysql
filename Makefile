@@ -1,7 +1,7 @@
 default:
-	echo "Please select an action from: run, stop or cli"
+	echo "Please select a valid option"
 
-run:
+start:
 	python3 scripts/run.py
 
 stop:
