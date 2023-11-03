@@ -2,6 +2,7 @@ default:
 	echo "Please select a valid option"
 
 install:
+	sh scripts/run.sh
 	sh scripts/install_laravel.sh
 
 start:
