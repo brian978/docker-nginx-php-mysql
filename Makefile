@@ -1,18 +1,21 @@
 default:
 	echo "Please select a valid option"
 
+install:
+	sh scripts/install_laravel.sh
+
 start:
-	python3 scripts/run.py
+	sh scripts/run.sh
 
 stop:
 	docker-compose stop
 
 restart:
 	docker-compose stop
-	python3 scripts/run.py
+	sh scripts/run.sh
 
 cli:
-	python3 scripts/cli.py
+	docker-compose run --rm -it php /bin/bash
 
 cleanup:
 	docker-compose down

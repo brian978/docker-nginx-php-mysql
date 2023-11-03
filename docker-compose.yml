@@ -1,36 +1,36 @@
 version: "3"
 services:
-    nginx:
-        restart: always
-        image: nginx:latest
-        ports:
-            - "80:80"
-        depends_on:
-            - php
-        volumes:
-            - ./app:/var/www/app:cached
-            - ./services/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
-            - ./logs/nginx:/var/log/nginx
+  nginx:
+    restart: always
+    image: nginx:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - php
+    volumes:
+      - ./app:/var/www/app:cached
+      - ./services/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - ./logs/nginx:/var/log/nginx
 
-    php:
-        restart: always
-        image: brian978/php-fpm:7.4
-        working_dir: /var/www/app
-        depends_on:
-            - db
-            - memcache
-        volumes:
-            - ./app:/var/www/app:cached
-            - ./services/fpm/www.conf:/usr/local/etc/php-fpm.d/www.conf
-            - ./services/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-            - ./logs/php:/var/log/php
-        environment:
-            - PHP_IDE_CONFIG=serverName=docker
+  php:
+    restart: always
+    image: brian978/php-fpm:8.2-dev
+    working_dir: /var/www/app
+    depends_on:
+      - db
+      - memcache
+    volumes:
+      - ./app:/var/www/app:cached
+      - ./services/fpm/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./services/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ./logs/php:/var/log/php
+    environment:
+      - PHP_IDE_CONFIG=serverName=docker
 
   db:
     image: mariadb:latest
     ports:
-      - "33061:3306"
+      - "3306:3306"
     volumes:
       - mysql-volume:/var/lib/mysql
     environment:
