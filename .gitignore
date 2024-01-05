@@ -17,5 +17,8 @@ ENV/
 env.bak/
 venv.bak/
 
+# Composer
+app/vendor
+
 # Docker config
 docker-compose.override.yml
