@@ -2,17 +2,17 @@ default:
 	echo "Please select a valid option"
 
 start:
-	python3 scripts/run.py
+	docker-compose up -d
 
 stop:
 	docker-compose stop
 
 restart:
 	docker-compose stop
-	python3 scripts/run.py
+	docker-compose up -d
 
 cli:
-	python3 scripts/cli.py
+	docker exec -it starter-app-php /bin/bash
 
 cleanup:
 	docker-compose down
